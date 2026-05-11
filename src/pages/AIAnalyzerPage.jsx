@@ -7,7 +7,7 @@ import APIKeyInput from '../components/ai/APIKeyInput';
 import AIResult from '../components/ai/AIResult';
 import { validateApiKey } from '../utils/validators';
 import { extractTextFromPDF } from '../utils/pdfParser';
-import { analyzeDocumentWithGemini } from '../utils/geminiApi';
+import { analyzeDocument } from '../utils/aiApi';
 import toast from 'react-hot-toast';
 import { Sparkles, FileSearch } from 'lucide-react';
 
@@ -18,6 +18,8 @@ const AIAnalyzerPage = () => {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState('');
   const [result, setResult] = useState(null);
+  const [provider, setProvider] = useState('claude');
+  const [endpoint, setEndpoint] = useState('');
 
   const handleAnalyze = async () => {
     // Validation
@@ -45,9 +47,9 @@ const AIAnalyzerPage = () => {
         throw new Error('Could not extract sufficient text from the PDF. Is it an image-based PDF without OCR?');
       }
 
-      // Step 2: Call Gemini
-      setLoadingText('Analyzing legal document with Gemini AI...');
-      const analysisData = await analyzeDocumentWithGemini(text, apiKey);
+      // Step 2: Call selected AI provider
+      setLoadingText(`Analyzing legal document with ${provider.charAt(0).toUpperCase() + provider.slice(1)}...`);
+      const analysisData = await analyzeDocument(text, apiKey, provider, endpoint);
       
       setResult(analysisData);
       toast.success('Document analysis complete!');
@@ -70,7 +72,7 @@ const AIAnalyzerPage = () => {
           AI Legal Document Analyzer
         </h1>
         <p className="text-slate-600 text-lg">
-          Upload a property document (PDF) and our system will use Gemini AI to extract key clauses, parties, values, and provide a stamp duty estimation.
+          Upload a property document (PDF) and our system will use AI to extract key clauses, parties, values, and provide a stamp duty estimation.
         </p>
       </div>
 
@@ -90,6 +92,10 @@ const AIAnalyzerPage = () => {
                 if (apiKeyError) setApiKeyError('');
               }} 
               error={apiKeyError} 
+              provider={provider}
+              onProviderChange={setProvider}
+              endpoint={endpoint}
+              onEndpointChange={setEndpoint}
             />
 
             <div className="flex justify-end pt-2">
