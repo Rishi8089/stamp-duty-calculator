@@ -1,0 +1,15 @@
+.calculator-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .calculator-grid {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+.result-row {
+  @apply flex justify-between items-center py-3 border-b border-slate-100 last:border-0;
+}

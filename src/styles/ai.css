@@ -1,0 +1,21 @@
+.dropzone-container {
+  @apply border-2 border-dashed border-indigo-200 rounded-3xl p-12 text-center cursor-pointer transition-all bg-indigo-50/50 hover:bg-indigo-50;
+}
+
+.dropzone-container.active {
+  @apply border-indigo-500 bg-indigo-100/50;
+}
+
+.ai-insight-card {
+  @apply bg-gradient-to-br from-indigo-50 to-purple-50 border border-indigo-100 rounded-2xl p-6 relative overflow-hidden;
+}
+
+.ai-insight-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #4f46e5, #9333ea);
+}
