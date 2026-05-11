@@ -35,19 +35,23 @@ const Home = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto text-center z-10">
-                    
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-sm font-medium mb-8">
+            <span className="flex h-2 w-2 rounded-full bg-indigo-400 animate-pulse"></span>
+            India's most comprehensive
+          </div>
+          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-            AI Stamp Duty Calculator <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
-              & Legal Document Analyzer
+            Stamp Duty Calculator <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400 italic">
+              Every Instrument. Every Act. Every State.
             </span>
           </h1>
           
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Instantly calculate state-wise property registration charges or leverage Gemini AI to extract critical legal insights from your PDF documents securely in your browser.
+          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+            Covering Indian Stamp Act 1899 · Finance Act 2019 · SEBI/Depository Rules 2019 · SCRA 1956 · State Stamp Acts · Registration Act 1908 — with AI-powered document analysis.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
             <Button 
               onClick={() => navigate('/calculator')}
               className="w-full sm:w-auto text-lg px-8 py-4"
@@ -63,6 +67,25 @@ const Home = () => {
               Analyze Document
               <FileSearch size={20} />
             </Button>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto pt-8 border-t border-white/10">
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-indigo-400 mb-1">36</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold">States & UTs</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-indigo-400 mb-1">55+</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold">Instrument Types</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-indigo-400 mb-1">12</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold">Governing Acts</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-3xl font-bold text-indigo-400 mb-1">AI</span>
+              <span className="text-xs uppercase tracking-widest text-slate-400 font-semibold">Doc Analysis</span>
+            </div>
           </div>
         </div>
       </section>

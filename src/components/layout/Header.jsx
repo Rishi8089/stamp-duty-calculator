@@ -17,7 +17,7 @@ const Header = () => {
             <div className="bg-indigo-600 text-white p-2.5 rounded-xl group-hover:bg-indigo-700 transition-colors">
               <Scale size={24} />
             </div>
-            <span className="font-bold text-xl md:text-2xl text-slate-800 tracking-tight">StampAI</span>
+            <span className="font-bold text-xl md:text-2xl text-slate-800 tracking-tight">StampCalc <span className="text-indigo-600">India</span></span>
           </Link>
           
           <nav className="flex items-center gap-2 md:gap-6">
@@ -40,6 +40,25 @@ const Header = () => {
               );
             })}
           </nav>
+        </div>
+
+        {/* Global Status Pills */}
+        <div className="flex flex-wrap items-center gap-2 pb-4 pt-1 border-t border-slate-100">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
+            ISA 1899 · Finance Act 2026 · Rules 2019
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
+            Registration Act 1908
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 text-slate-500 border border-slate-200">
+            All 36 States & UTs
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-50 text-emerald-600 border border-emerald-100">
+            FY 2026–27 Updated
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-rose-50 text-rose-600 border border-rose-100">
+            Not Legal Advice
+          </span>
         </div>
       </div>
     </header>

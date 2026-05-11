@@ -2,7 +2,8 @@ import { useState } from 'react';
 import Card from '../components/common/Card';
 import CalculatorForm from '../components/calculator/CalculatorForm';
 import ResultPanel from '../components/calculator/ResultPanel';
-import RatesTable from '../components/calculator/RatesTable';
+import DutyReferenceTable from '../components/calculator/DutyReferenceTable';
+import StateRatesTable from '../components/calculator/StateRatesTable';
 import { calculateStampDuty } from '../utils/calculations';
 import { Calculator } from 'lucide-react';
 
@@ -49,7 +50,8 @@ const CalculatorPage = () => {
         </Card>
       </div>
 
-      <RatesTable />
+      <DutyReferenceTable />
+      <StateRatesTable />
     </div>
   );
 };
