@@ -35,10 +35,7 @@ const Home = () => {
         </div>
         
         <div className="relative max-w-5xl mx-auto text-center z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 text-sm font-medium mb-8">
-            <Zap size={16} /> MVP Release v1.0
-          </div>
-          
+                    
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
             AI Stamp Duty Calculator <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">
